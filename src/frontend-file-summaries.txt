@@ -1,0 +1,22 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for storefront, listing detail, and admin dashboard with theme provider wrapper.",
+  "frontend/src/pages/StorefrontPage.tsx": "Public storefront page displaying active listings in a grid with search and condition filter functionality, plus hero banner section.",
+  "frontend/src/pages/ListingDetailPage.tsx": "Listing detail page showing full card information, image, and order request form with sold status handling, using correct route path for useParams.",
+  "frontend/src/pages/admin/AdminLayout.tsx": "Protected admin layout component enforcing Internet Identity authentication and admin authorization with profile setup dialog.",
+  "frontend/src/pages/admin/AdminDashboardPage.tsx": "Admin dashboard with tabbed interface for managing listings and order requests.",
+  "frontend/src/components/layout/PublicLayout.tsx": "Public-facing layout wrapper with header, main content outlet, and footer.",
+  "frontend/src/components/layout/PublicHeader.tsx": "Sticky header with logo, navigation links to store and admin, and login button.",
+  "frontend/src/components/layout/PublicFooter.tsx": "Footer with copyright notice and Caffeine.ai attribution with UTM tracking.",
+  "frontend/src/components/store/ListingCard.tsx": "Reusable card component displaying listing thumbnail, title, price, condition, and sold status with hover effects.",
+  "frontend/src/components/store/OrderRequestForm.tsx": "Form component for buyers to submit purchase requests with optional offer price and message fields, including authentication check and success confirmation.",
+  "frontend/src/components/admin/AdminListingsPanel.tsx": "Admin panel for viewing seller's listings with create new listing and mark as sold functionality.",
+  "frontend/src/components/admin/CreateListingDialog.tsx": "Modal dialog form for creating new card listings with title, description, price, condition, and image URL fields.",
+  "frontend/src/components/admin/AdminOrdersPanel.tsx": "Admin panel for viewing and managing order requests with status filtering, displaying buyer offer prices and messages when provided, and accept/reject actions.",
+  "frontend/src/components/auth/LoginButton.tsx": "Reusable login/logout button component with Internet Identity integration and loading states.",
+  "frontend/src/components/auth/ProfileSetupDialog.tsx": "Modal dialog prompting first-time users to enter their name for profile creation.",
+  "frontend/src/hooks/useListings.ts": "React Query hooks for fetching active listings, seller listings, creating listings, and marking listings as sold.",
+  "frontend/src/hooks/useOrderRequests.ts": "React Query hooks for managing order requests including fetching seller orders, creating requests with optional offer price and message, and updating status.",
+  "frontend/src/hooks/useAdmin.ts": "React Query hooks for admin authorization checks and user profile management.",
+  "frontend/src/index.css": "Global styles with OKLCH color system using warm neutral backgrounds and deep teal/charcoal accents for sports collectibles theme.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended theme tokens, custom shadows, and design system aligned with sports card aesthetic."
+}

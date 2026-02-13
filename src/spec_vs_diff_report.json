@@ -1,0 +1,26 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T09:38:49.649Z",
+  "summary": "The diff adds a Motoko migration module introducing optional offerPrice/message on OrderRequest, updates backend types to include these fields, and updates the buyer OrderRequestForm plus the order-request hooks to send the new parameters. The admin orders panel was modified, but the truncated diff does not conclusively show the rendering of offer/message or that backend createOrderRequest persists them.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "Added status filtering UI for admin order requests (filter dropdown and empty-state variations), which is not required by REQ-9.",
+      "reason": "REQ-9 only asks to display the buyer’s offer price/message and keep accept/reject working; filtering by status is extra behavior.",
+      "evidence": [
+        "frontend/src/components/admin/AdminOrdersPanel.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.56,
+  "changed_files": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "frontend-file-summaries.txt",
+    "frontend/src/components/admin/AdminOrdersPanel.tsx",
+    "frontend/src/components/store/OrderRequestForm.tsx",
+    "frontend/src/hooks/useOrderRequests.ts",
+    "project_state.json"
+  ]
+}

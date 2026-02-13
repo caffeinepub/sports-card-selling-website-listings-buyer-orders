@@ -1,0 +1,76 @@
+{
+  "kind": "build_request",
+  "title": "Enhance buyer purchase request flow with offer details and seller visibility",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Extend the buyer purchase request flow on the listing detail page so an authenticated buyer can submit a purchase request that includes (a) an optional offer price and (b) an optional message to the seller, instead of only submitting a listingId.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "If you want, we can add a way for buyers to submit purchase requests next.",
+          "Yes please"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On the listing detail page, the purchase request form includes an optional numeric offer price input and an optional free-text message input (both user-facing labels and helper text in English).",
+        "Submitting the form creates an order request that persists the offer price and message on the backend and returns success without console errors.",
+        "If the listing is sold, the form remains disabled and cannot be submitted."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Update the admin/seller order requests UI to display the buyer’s submitted offer price (if provided) and message (if provided) for each order request.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "If you want, we can add a way for buyers to submit purchase requests next."
+        ]
+      },
+      "acceptanceCriteria": [
+        "In the admin order requests list, each order shows offer price when present and shows the buyer message when present (English labels).",
+        "Orders that do not include offer price or message still render cleanly without placeholder errors.",
+        "Accept/Reject actions continue to work as before."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Implement a backward-compatible Motoko state migration for existing order requests to support the new optional offer price and optional message fields.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Yes please"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Upgrading the canister preserves all existing listings and order requests.",
+        "Existing order requests created before this change remain readable and default the new fields to null/empty optional values.",
+        "New order requests created after this change store the new optional fields correctly."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor with all logic in backend/main.mo; only add backend/migration.mo if needed for state upgrade.",
+    "Do not modify frontend paths marked immutable by SYSTEM_CONTEXT (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui).",
+    "Use English for all user-facing UI text."
+  ],
+  "nonGoals": [
+    "Implementing payments/checkout, escrow, or on-chain settlement.",
+    "Adding third-party authentication providers beyond Internet Identity.",
+    "Real-time chat or messaging between buyer and seller."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

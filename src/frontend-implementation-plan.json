@@ -1,0 +1,44 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Purchase request offer/message fields and seller visibility (frontend)",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Extend listing detail purchase request form to collect optional offer price and optional message for authenticated buyers and submit them with the request.",
+      "acceptanceCriteria": [
+        "On the listing detail page, the purchase request form includes an optional numeric offer price input and an optional free-text message input (both user-facing labels and helper text in English).",
+        "Submitting the form creates an order request that persists the offer price and message on the backend and returns success without console errors.",
+        "If the listing is sold, the form remains disabled and cannot be submitted."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/store/OrderRequestForm.tsx",
+          "operation": "modify",
+          "description": "Add controlled inputs for optional offer price (numeric) and optional message (free-text) with English labels/helper text; disable inputs and submission when the listing is sold; on submit, pass null when fields are empty and keep the existing authenticated-buyer gating behavior using the authorization component’s Internet Identity flow (Verify the component's usage instructions before implementing.)"
+        },
+        {
+          "path": "frontend/src/hooks/useOrderRequests.ts",
+          "operation": "modify",
+          "description": "Update the create-order-request mutation to accept offerPrice/message parameters and call the backend createOrderRequest capability with offerPrice/message as optional (null when absent); keep query invalidation behavior unchanged and ensure mutation errors are surfaced without console errors during normal success flow."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Show buyer-submitted offer price and message in the admin/seller order requests list while keeping Accept/Reject actions unchanged.",
+      "acceptanceCriteria": [
+        "In the admin order requests list, each order shows offer price when present and shows the buyer message when present (English labels).",
+        "Orders that do not include offer price or message still render cleanly without placeholder errors.",
+        "Accept/Reject actions continue to work as before."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/admin/AdminOrdersPanel.tsx",
+          "operation": "modify",
+          "description": "Render optional order.offerPrice and order.message fields when provided, using English labels and clean conditional display; format the offer price consistently with existing listing price display conventions; do not change Accept/Reject wiring or status update behavior."
+        }
+      ]
+    }
+  ]
+}

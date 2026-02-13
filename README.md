@@ -1,2 +1,3 @@
-# sports-card-selling-website-listings-buyer-orders
-Exported from Caffeine project: Sports Card Selling Website (Listings + Buyer Orders)
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

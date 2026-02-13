@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Website to sell the user's sports cards to buyers (sports card marketplace/e-commerce site).",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-build-a-public-storefront-ui-where-buyers-can-browse-search-and-filter-sports-card-listings",
+      "title": "Build a public storefront UI where buyers can browse, search, and filter sports card listings.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-buyer-order-request-flow-on-the-card-detail-page",
+      "title": "Add a buyer order request flow on the card detail page.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-seller-dashboard-secured-by-internet-identity-to-manage-listings-and-order-requests",
+      "title": "Create an admin/seller dashboard secured by Internet Identity to manage listings and order requests.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-visual-theme-for-a-sports-collectibles-storefront-and-enforce-it-consistently-across-pages",
+      "title": "Apply a coherent visual theme for a sports collectibles storefront and enforce it consistently across pages.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-brand-imagery-and-integrate-it-into-the-ui",
+      "title": "Add generated static brand imagery and integrate it into the UI.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-extend-the-buyer-purchase-request-flow-on-the-listing-detail-page-so-an-authenticated-buyer-can-submit-a-purchase-request-that-includes-a-an-optional-offer-price-and-b-an-optional-message-to-the-seller-instead-of-only-submitting-a-listingid",
+      "title": "Extend the buyer purchase request flow on the listing detail page so an authenticated buyer can submit a purchase request that includes (a) an optional offer price and (b) an optional message to the seller, instead of only submitting a listingId.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-admin-seller-order-requests-ui-to-display-the-buyer-s-submitted-offer-price-if-provided-and-message-if-provided-for-each-order-request",
+      "title": "Update the admin/seller order requests UI to display the buyer’s submitted offer price (if provided) and message (if provided) for each order request.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a website for the user to list and sell sports cards to buyers (basic e-commerce/marketplace).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Create backend data models and APIs to support a sports card catalog with seller-managed listings.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create backend data models and APIs for buyer order requests (an intent-to-buy) tied to a specific card.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Implement a backward-compatible Motoko state migration for existing order requests to support the new optional offer price and optional message fields.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Sports Card Selling Website (Listings + Buyer Orders)",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

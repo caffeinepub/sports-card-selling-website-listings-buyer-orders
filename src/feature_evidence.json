@@ -1,0 +1,44 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-extend-the-buyer-purchase-request-flow-on-the-listing-detail-page-so-an-authenticated-buyer-can-submit-a-purchase-request-that-includes-a-an-optional-offer-price-and-b-an-optional-message-to-the-seller-instead-of-only-submitting-a-listingid",
+      "featureTitle": "Extend the buyer purchase request flow on the listing detail page so an authenticated buyer can submit a purchase request that includes (a) an optional offer price and (b) an optional message to the seller, instead of only submitting a listingId.",
+      "files": [
+        "frontend/src/components/store/OrderRequestForm.tsx",
+        "frontend/src/hooks/useOrderRequests.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-admin-seller-order-requests-ui-to-display-the-buyer-s-submitted-offer-price-if-provided-and-message-if-provided-for-each-order-request",
+      "featureTitle": "Update the admin/seller order requests UI to display the buyer’s submitted offer price (if provided) and message (if provided) for each order request.",
+      "files": [
+        "frontend/src/components/admin/AdminOrdersPanel.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
